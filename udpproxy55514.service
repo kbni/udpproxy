@@ -1,0 +1,12 @@
+[Unit]
+Description=UDP Proxy for 55514
+
+[Service]
+ExecStart=/usr/bin/udpproxy.py --send
+Restart=on-failure
+User=nobody
+Group=nogroup
+Environment="RECV_PORT=55514"
+
+[Install]
+WantedBy=multi-user.target
